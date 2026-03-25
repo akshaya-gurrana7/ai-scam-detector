@@ -24,23 +24,18 @@ X = vectorizer.fit_transform(df["text"])
 model = LogisticRegression()
 model.fit(X, df["label"])
 
-@app.route("/", methods=["GET","POST"])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     prediction = ""
-    if request.method == "POST":
-        text = request.form["message"]
-        vector = vectorizer.transform([text])
-        result = model.predict(vector)[0]
+
+    if request.method == 'POST':
+        message = request.form['message']
+        vect = vectorizer.transform([message])
+        result = model.predict(vect)[0]
 
         if result == 1:
-            prediction = "⚠ Scam Detected"
+            prediction = "⚠️ Scam Detected"
         else:
             prediction = "✅ Legitimate Course"
 
     return render_template("index.html", prediction=prediction)
-
-import os
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
