@@ -6,14 +6,20 @@ app = Flask(__name__)
 
 data = {
     "text": [
-        "Pay fee for internship certificate",
-        "Guaranteed job after payment",
-        "Free internship with training",
-        "Learn AI course from university",
-        "Limited offer pay now",
-        "Official certified course"
+        "Free internship pay registration fee",
+        "Earn money fast no skills required",
+        "Pay 2000 to confirm your job",
+        "Limited offer job guarantee",
+        "Work from home earn lakhs",
+
+        "Python internship with certificate",
+        "Machine learning course with projects",
+        "Internship with training and mentorship",
+        "Online course with syllabus",
+        "Software training with placement support"
     ],
-    "label": [1,1,0,0,1,0]
+    "label": [1,1,1,1,1, 0,0,0,0,0]
+
 }
 
 df = pd.DataFrame(data)
