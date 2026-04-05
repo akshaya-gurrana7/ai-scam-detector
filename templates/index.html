@@ -6,16 +6,22 @@
 
 <body>
 
-    <h2>AI Based Fake Course & Internship Scam Detection</h2>
+    <body style="font-family: Arial; text-align: center; margin-top: 50px;">
 
-    <form method="POST">
-        <input type="text" name="message" placeholder="Enter course or internship message" required>
-        <button type="submit">Check</button>
-    </form>
+<h1 style="color: #2c3e50;">AI Scam Detector</h1>
 
-    {% if prediction %}
-    <h3>{{ prediction }}</h3>
-{% endif %}
+<form method="POST">
+    <input type="text" name="message" placeholder="Enter course or internship message"
+    style="padding:10px; width:300px;">
+    
+    <button type="submit" style="padding:10px; background:blue; color:white;">
+        Check
+    </button>
+</form>
+
+<br>
+
+<h2>{{ prediction }}</h2>
 
 </body>
 </html>
